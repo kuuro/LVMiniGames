@@ -49,9 +49,11 @@ public class Game1Manager : MonoBehaviour
     }
     IEnumerator ieGetTime()
     {
-        WWW www = new WWW("https://timeapi.io/api/Time/current/zone?timeZone=Asia/Ho_Chi_Minh");
+        //WWW www = new WWW("https://timeapi.io/api/Time/current/zone?timeZone=Asia/Ho_Chi_Minh");
+        WWW www = new WWW("https://get.geojs.io/v1/ip/country/8.8.8.8");
         yield return www;
         timeText.text = "Call Sample Api Done";
+        Debug.Log(www.text);
         yield return new WaitForSeconds(2);
         StartCoroutine(ieStart());
     }
